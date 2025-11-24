@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BloxGlobe Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="src/router.js" defer></script>
+</head>
+
+<body>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-header">
+        <img src="src/images/BloxGlobe.png" class="rbx-logo" />
+        <span class="title">Dashboard</span>
+      </div>
+
+      <button class="nav-btn" data-page="home">Home</button>
+      <button class="nav-btn" data-page="experience">Creations</button>
+      <button class="nav-btn" data-page="store">Store</button>
+
+      <div class="divider"></div>
+
+      <button class="nav-btn" data-page="Forum">Forum</button>
+      <button class="nav-btn" data-page="update">Updates</button>
+
+      <div class="divider"></div>
+
+      <button class="nav-btn" data-page="setting">Settings</button>
+      <button class="nav-btn" data-page="Tools">All Tools</button>
+
+      <div class="divider"></div>
+
+      <button class="nav-btn bottom-link" data-page="doc&faq">Docs & FAQ</button>
+      <button class="nav-btn bottom-link" data-page="email&support">Email & Support</button>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div id="page-content" class="content">Importing data, assets etc</div>
+
+      <footer class="footer">
+        © <span id="year"></span> BloxGlobe — All rights reserved.
+      </footer>
+    </main>
+
+  </div>
+</body>
+</html>
