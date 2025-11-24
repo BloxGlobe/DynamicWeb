@@ -1,0 +1,201 @@
+/* Dashboard full style.css */
+
+:root {
+  --bg: #111315;
+  --bg-secondary: #1A1C1E;
+  --bg-hover: #292c2f;
+  --bg-active: #2f3236;
+  --divider: #2a2d30;
+  --text: #ffffff;
+  --text-dim: rgba(255,255,255,0.55);
+
+  --card-bg: #181a1c;
+  --card-border: #2b2e31;
+  --game-shadow: 0 0 20px rgba(0,0,0,0.35);
+  --highlight: #00d1ff;
+}
+
+/* BASE */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--divider);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+}
+
+.rbx-logo { width: 22px; }
+.creator-title { letter-spacing: 0.5px; }
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.user-pfp {
+  width: 33px;
+  height: 33px;
+  border-radius: 7px;
+}
+
+.username { font-weight: 600; }
+.arrow-icon {
+  width: 12px;
+  opacity: 0.5;
+}
+
+.nav-btn {
+  padding: 10px 14px;
+  background: transparent;
+  text-align: left;
+  border-radius: 6px;
+  transition: 0.15s;
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.nav-btn:hover { background: var(--bg-hover); }
+.nav-btn-active { background: var(--bg-active); }
+.bottom-link { margin-top: 6px; opacity: 0.8; }
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--divider);
+  opacity: 0.35;
+  margin: 10px 0;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.content { padding: 25px; }
+.footer {
+  padding: 12px 20px;
+  font-size: 14px;
+  color: var(--text-dim);
+  border-top: 1px solid var(--divider);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-thumb {
+  background: #2d3033;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover { background: #3a3d40; }
+::-webkit-scrollbar-track { background: #181a1c; }
+
+/* PAGE TITLES */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* CARDS */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: var(--game-shadow);
+}
+
+/* GAME CARD (Roblox Style) */
+.game-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--game-shadow);
+  transition: 0.15s;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0,0,0,0.55);
+}
+
+.game-thumb-container {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.game-thumb {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.game-top-text {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 800;
+  text-shadow: 0 0 5px black;
+}
+
+.game-title {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.game-stats {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.game-stats p {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+  color: var(--text);
+}
+
+/* Website layout*/
