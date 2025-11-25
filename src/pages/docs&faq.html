@@ -1,0 +1,88 @@
+<div class="page">
+  <h1 class="page-title">Docs & FAQ</h1>
+
+  <!-- Search Bar -->
+  <div class="card" style="padding:20px; margin-bottom:25px;">
+    <input 
+      id="search-docs"
+      type="text"
+      placeholder="Search the documentation… (AI assistant coming soon)"
+      style="
+        width:100%;
+        padding:14px;
+        border-radius:10px;
+        border:1px solid #2c2d30;
+        background:#1A1C1E;
+        color:white;
+        font-size:16px;
+      "
+    >
+  </div>
+
+  <!-- Docs Section -->
+  <div class="card" style="padding:25px;">
+    <h2>📘 Development Wiki</h2>
+
+    <div id="docs-content" style="margin-top:20px; line-height:1.7;">
+      <h3>• How We Make Our Games</h3>
+      <p>
+        Our team follows an optimized Roblox Studio pipeline — using 
+        modular systems, performance-friendly assets, and live-update deployment.
+        This includes:
+      </p>
+      <ul>
+        <li>• Custom Lua frameworks</li>
+        <li>• Part count & draw-call optimization</li>
+        <li>• Lighting presets designed for realism</li>
+        <li>• UI made using component-based design</li>
+      </ul>
+
+      <h3 style="margin-top:25px;">• How We Build Our UGC</h3>
+      <p>
+        We use Blender + Substance Painter and follow Roblox’s poly & texture
+        restrictions. Every item is QA-checked before submission.
+      </p>
+
+      <h3 style="margin-top:25px;">• Internal Tools</h3>
+      <p>
+        • Asset linker<br>
+        • Studio plugin pack<br>
+        • Animation workflow tools<br>
+        • DataStore stress-testing simulator
+      </p>
+
+      <h3 style="margin-top:25px;">• FAQ</h3>
+      <ul>
+        <li>Q: How long does a game take? <br>
+            A: Depends on scope, usually 1–6 months.</li>
+
+        <li style="margin-top:12px;">
+          Q: Do you accept commissions?<br>
+          A: Yes! Check the Support → Hire page.
+        </li>
+
+        <li style="margin-top:12px;">
+          Q: What engine do you use?<br>
+          A: Roblox Studio + external tools (Blender, VSCode, Figma).
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+// Simple search filter (for now)
+const search = document.getElementById("search-docs");
+const docs = document.getElementById("docs-content");
+
+search.addEventListener("input", () => {
+  const q = search.value.toLowerCase();
+  const blocks = docs.querySelectorAll("h3, p, li");
+
+  blocks.forEach(el => {
+    el.style.display = el.textContent.toLowerCase().includes(q)
+      ? "block"
+      : "none";
+  });
+});
+</script>
