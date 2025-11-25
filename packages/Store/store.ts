@@ -1,35 +1,35 @@
-// store.ts — Forum data store
-
 export interface ForumPost {
-  message: string;
-  timestamp: number;
+  id: string;
+  text: string;
+  time: number;
 }
 
-export function getPosts(): ForumPost[] {
-  const data = localStorage.getItem("forum-posts-full");
+const KEY = "bloxglobe_forum_posts_v2";
+const MAX_POSTS = 2000000000000000;
 
-  if (!data) return [];
+export function getPosts(): ForumPost[] {
   try {
-    return JSON.parse(data);
+    return JSON.parse(localStorage.getItem(KEY) || "[]");
   } catch {
     return [];
   }
 }
 
-export function addPost(message: string): ForumPost {
-  const post: ForumPost = {
-    message,
-    timestamp: Date.now(),
+export function addPost(text: string): void {
+  const posts = getPosts();
+
+  const newPost: ForumPost = {
+    id: crypto.randomUUID(),
+    text,
+    time: Date.now(),
   };
 
-  const posts = getPosts();
-  posts.push(post);
+  posts.unshift(newPost);
 
-  localStorage.setItem("forum-posts-full", JSON.stringify(posts));
+  // Limit storage size
+  if (posts.length > MAX_POSTS) {
+    posts.length = MAX_POSTS;
+  }
 
-  return post;
-}
-
-export function clearPosts() {
-  localStorage.removeItem("forum-posts-full");
+  localStorage.setItem(KEY, JSON.stringify(posts));
 }

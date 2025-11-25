@@ -1,48 +1,80 @@
 <div class="page">
-  <h1 class="page-title">Forum page</h1>
+  <h1 class="page-title">Forum</h1>
 
   <div class="card" style="padding:20px;">
-      <h2>Community Forum</h2>
+    <h2>Community Forum</h2>
 
-      <!-- Posts List -->
-      <div id="posts" style="margin-top:20px;"></div>
+    <!-- Posts Section -->
+    <div id="posts" style="margin-top:20px;"></div>
 
-      <!-- Input Bar -->
-      <textarea 
-        id="post-input" 
-        placeholder="Write something…" 
-        style="
-          width:100%;
-          height:140px;
-          margin-top:20px;
-          padding:15px;
-          resize:none;
-          border-radius:8px;
-          background:#1A1C1E;
-          color:white;
-          border:1px solid #2a2d30;
-          font-size:16px;
-        "
-      ></textarea>
+    <!-- Input Bar -->
+    <textarea 
+      id="post-input"
+      placeholder="Write something…"
+      style="
+        width:100%;
+        height:140px;
+        margin-top:20px;
+        padding:15px;
+        resize:none;
+        border-radius:8px;
+        background:#1A1C1E;
+        color:white;
+        border:1px solid #2a2d30;
+        font-size:16px;
+      "
+    ></textarea>
 
-      <!-- Send Button -->
-      <button 
-        id="send-btn"
-        style="
-          width:100%;
-          margin-top:12px;
-          padding:14px;
-          border:none;
-          border-radius:8px;
-          background:#3b82f6;
-          color:white;
-          font-size:16px;
-          cursor:pointer;
-        "
-      >
-        Send Post
-      </button>
+    <!-- Send Button -->
+    <button 
+      id="send-btn"
+      style="
+        width:100%;
+        margin-top:12px;
+        padding:14px;
+        border:none;
+        border-radius:8px;
+        background:#3b82f6;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+      "
+    >
+      Send Post
+    </button>
   </div>
 </div>
 
-<script src="packages/Store/forum.js"></script>
+<script type="module">
+import { addPost, getPosts } from "/packages/Store/store.js";
+
+const postsContainer = document.getElementById("posts");
+const input = document.getElementById("post-input");
+const send = document.getElementById("send-btn");
+
+// Load existing posts
+function renderPosts() {
+  const posts = getPosts();
+  postsContainer.innerHTML = posts
+    .map(p => `
+      <div class="card" style="margin-top:12px; padding:14px;">
+        <p style="white-space:pre-wrap;">${p.text}</p>
+        <p style="opacity:0.5; margin-top:6px; font-size:13px;">
+          ${new Date(p.time).toLocaleString()}
+        </p>
+      </div>
+    `)
+    .join("");
+}
+
+send.addEventListener("click", () => {
+  const text = input.value.trim();
+  if (!text) return;
+
+  addPost(text);
+  input.value = "";
+  renderPosts();
+});
+
+renderPosts();
+</script>
