@@ -1,53 +1,52 @@
-<div class="text-center mt-20 max-w-xl mx-auto animate-fadeIn">
-  <div class="flex justify-center mb-6">
-    <div class="w-20 h-20 bg-red-600/20 rounded-2xl flex items-center justify-center animate-pulse">
-      <span class="text-4xl">⚠️</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <link rel="stylesheet" href="src/assets/styles/404.css">
+</head>
+
+<body class="error-body">
+
+  <div class="error-container fade-in">
+
+    <!-- Animated Icon -->
+    <div class="icon-bounce">
+      <div class="icon-circle">
+        <span class="icon">🚫</span>
+      </div>
     </div>
+
+    <h1 class="title">Oops! 404</h1>
+    <p class="subtitle">This page does not exist on the Dashboard 😭</p>
+
+    <p class="reason-title">Why you're seeing this:</p>
+
+    <ul class="reason-list">
+      <li>• The module/page was renamed or deleted</li>
+      <li>• You used an outdated or broken link</li>
+      <li>• The page can only be loaded from inside the dashboard</li>
+      <li>• You typed something wrong in the URL (skill issue 💀)</li>
+      <li>• You tried bypassing modules directly (nice try 😒)</li>
+      <li>• A bug happened — report it to developers!</li>
+    </ul>
+
+    <p class="redirect-msg">Redirecting you automatically…</p>
+
+    <button onclick="goHome()" class="return-btn">
+      Go Back Now
+    </button>
+
   </div>
 
-  <h1 class="text-6xl font-extrabold mb-4">404 page not found😡</h1>
+  <script>
+    function goHome() {
+      location.href = "https://bloxglobe.github.io/BloxGlobe-website/#home";
+    }
 
-  <p class="text-lg mb-3">
-    Oops! The page you tried to access couldn’t be found.
-  </p>
+    setTimeout(goHome, 3500);
+  </script>
 
-  <p class="opacity-80 mb-4">
-    This usually happens when:
-  </p>
-
-  <ul class="opacity-70 text-left inline-block leading-7">
-    <li>• The module/page was moved or renamed</li>
-    <li>• The url is outdated or incorrect</li>
-    <li>• You typed the address manually with a typo</li>
-    <li>• U became an idiot & tried to bypass site url</li>
-    <li>• If u believe there was a bug, pls report to our admins / developers</li>
-    <li>• The dashboard only loads modules internally (no direct .html links)</li>
-  </ul>
-
-  <p class="mt-6 opacity-70">
-    Redirecting you back to the dashboard…
-  </p>
-
-  <button
-    onclick="location.href='https://bloxglobe.github.io/BloxGlobe-website/#home'"
-    class="mt-6 px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium"
-  >
-    Return Now
-  </button>
-</div>
-
-<script>
-setTimeout(() => {
-  location.href = "https://bloxglobe.github.io/BloxGlobe-website/#home";
-}, 3000);
-</script>
-
-<style>
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-</style>
+</body>
+</html>

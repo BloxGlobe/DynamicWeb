@@ -1,0 +1,120 @@
+/* ----- Base Page ----- */
+.error-body {
+  background: radial-gradient(circle at top, #3b82f6, #1e1e20 60%);
+  color: white;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ----- Main Container ----- */
+.error-container {
+  text-align: center;
+  max-width: 550px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.25);
+}
+
+/* ----- Animated Icon ----- */
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.25);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 1.6s infinite ease-in-out;
+  margin: 0 auto;
+}
+
+.icon {
+  font-size: 50px;
+}
+
+/* Bounce animation for the icon container */
+.icon-bounce {
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+/* ----- Text Styles ----- */
+.title {
+  font-size: 64px;
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+.subtitle {
+  opacity: 0.85;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.reason-title {
+  margin-top: 10px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.reason-list {
+  text-align: left;
+  display: inline-block;
+  opacity: 0.75;
+  line-height: 1.7;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* ----- Redirect Message ----- */
+.redirect-msg {
+  margin-top: 20px;
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+/* ----- Return Button ----- */
+.return-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #2563eb;
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.return-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* ----- Fade In ----- */
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* ----- Animations ----- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.07); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
