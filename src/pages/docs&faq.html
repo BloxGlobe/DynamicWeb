@@ -16,7 +16,7 @@
       id="search-docs"
       type="text"
       placeholder="Search the documentation… (AI assistant coming soon)"
-      class="search-input"
+      class="modern-search"
     >
   </div>
 
@@ -106,3 +106,23 @@ search.addEventListener("input", () => {
 </script>
 </body>
 </html>
+
+<style>
+  .modern-search {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #2c2d30;
+    background: linear-gradient(135deg, #1f2124, #161719);
+    color: white;
+    font-size: 16px;
+    transition: 0.25s ease;
+    box-shadow: 0 0 0 0 rgba(0, 140, 255, 0.4);
+  }
+  .modern-search:focus {
+    border-color: #0a84ff;
+    box-shadow: 0 0 12px 2px rgba(10, 132, 255, 0.5);
+    outline: none;
+    background: #1c1e21;
+  }
+</style>
