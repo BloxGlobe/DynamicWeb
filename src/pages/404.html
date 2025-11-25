@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 - Page Not Found</title>
+
+  <!-- Force page to break outside dashboard -->
+  <script>
+    if (window.location !== window.parent.location) {
+      window.top.location.href = window.location.href;
+    }
+  </script>
+
   <link rel="stylesheet" href="src/assets/styles/404.css">
 </head>
 
@@ -41,12 +49,10 @@
   </div>
 
   <script>
-    // SAFE dashboard navigation
     function goHome() {
-      window.location.hash = "home";
+      location.href = "https://bloxglobe.github.io/DynamicWeb/#home";
     }
 
-    // Auto–redirect after 3.5 seconds
     setTimeout(goHome, 3500);
   </script>
 
