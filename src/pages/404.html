@@ -41,10 +41,12 @@
   </div>
 
   <script>
+    // SAFE dashboard navigation
     function goHome() {
-      location.href = "https://bloxglobe.github.io/BloxGlobe-website/#home";
+      window.location.hash = "home";
     }
 
+    // Auto–redirect after 3.5 seconds
     setTimeout(goHome, 3500);
   </script>
 
