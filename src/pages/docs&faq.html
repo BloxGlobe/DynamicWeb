@@ -1,95 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Docs & FAQ</title>
-  <link rel="stylesheet" href="docs.css" />
-</head>
-<body>
-<div class="page animate-fadeIn">
+<div class="page">
   <h1 class="page-title">Docs & FAQ</h1>
 
-  <!-- Top Search Bar -->
-  <div class="card search-card">
-    <input 
-      id="search-docs"
-      type="text"
-      placeholder="Search the documentation… (AI assistant coming soon)"
-      class="modern-search"
-    >
+  <!-- Modern Search Bar (Top) -->
+  <div class="card" style="padding:22px; margin-bottom:30px;">
+    <div style="
+      display:flex;
+      align-items:center;
+      background:linear-gradient(135deg, #1e1f22, #17181a);
+      border:1px solid #2c2d30;
+      border-radius:14px;
+      padding:14px 18px;
+      transition:0.25s;
+    " onmouseover="this.style.borderColor='#4b72ff'" onmouseout="this.style.borderColor='#2c2d30'">
+      <svg width="20" height="20" fill="#7a7f86" style="margin-right:10px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 
+          1.415-1.414l-3.85-3.85zm-5.242.656a5 
+          5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+      </svg>
+
+      <input 
+        id="search-docs"
+        type="text"
+        placeholder="Search the documentation…"
+        style="
+          flex:1;
+          background:transparent;
+          border:none;
+          outline:none;
+          color:white;
+          font-size:16px;
+        "
+      >
+    </div>
   </div>
 
-  <!-- Docs Section -->
-  <div class="card docs-card">
-    <h2 class="section-title">📘 Development Wiki</h2>
+  <!-- EXTENDED DOCUMENTATION -->
+  <div class="card" style="padding:28px;">
+    <h2>📘 Development Wiki</h2>
 
-    <div id="docs-content" class="docs-content">
+    <div id="docs-content" style="margin-top:20px; line-height:1.8;">
+
+      <!-- SECTION 1 -->
       <h3>• How We Make Our Games</h3>
-      <p>
-        Our team follows an optimized Roblox Studio pipeline — using 
-        modular systems, performance-friendly assets, and live-update deployment.
-        This includes:
-      </p>
+      <p>We follow a complete AAA-style Roblox development pipeline:</p>
       <ul>
-        <li>• Custom Lua frameworks</li>
-        <li>• Part count & draw-call optimization</li>
-        <li>• Lighting presets designed for realism</li>
-        <li>• UI made using component-based design</li>
+        <li>• Modular systems built with Typescript + Lua bridges</li>
+        <li>• Entity-component architecture for gameplay</li>
+        <li>• LOD systems for optimized rendering</li>
+        <li>• Real-time build syncing using custom plugins</li>
+        <li>• Automatic QA testing using unit & integration scripts</li>
       </ul>
 
-      <h3>• How We Build Our UGC</h3>
-      <p>
-        We use Blender + Substance Painter and follow Roblox’s poly & texture
-        restrictions. Every item is QA-checked before submission.
-      </p>
-
-      <h3>• Internal Tools</h3>
-      <p>
-        • Asset linker<br>
-        • Studio plugin pack<br>
-        • Animation workflow tools<br>
-        • DataStore stress-testing simulator
-      </p>
-
-      <h3>• FAQ</h3>
+      <!-- SECTION 2 -->
+      <h3 style="margin-top:28px;">• UGC Creation Pipeline</h3>
+      <p>Our UGC workflow involves:</p>
       <ul>
-        <li>Q: How long does a game take? <br>
-            A: Depends on scope, usually 1–6 months.</li>
+        <li>• Blender sculpting & retopology workflow</li>
+        <li>• Substance Painter for PBR texturing</li>
+        <li>• Auto-baking 2k → 256px maps</li>
+        <li>• Collision & deformation checks</li>
+      </ul>
 
-        <li>
-          Q: Do you accept commissions?<br>
-          A: Yes! Check the Support → Hire page.
+      <!-- SECTION 3 -->
+      <h3 style="margin-top:28px;">• Internal Tooling & Automation</h3>
+      <ul>
+        <li>• Asset pipeline CLI</li>
+        <li>• Plugin pack: animator, material linker, lightmapper</li>
+        <li>• Map optimization checker</li>
+        <li>• Custom DataStore benchmarking tools</li>
+      </ul>
+
+      <!-- SECTION 4 -->
+      <h3 style="margin-top:28px;">• FAQ</h3>
+      <ul>
+        <li>Q: How long does a full game take?<br>
+            A: 1–6 months based on scope.</li>
+
+        <li style="margin-top:12px;">
+          Q: Do you take commissions?<br>
+          A: Yes — see Support → Hire page.
         </li>
 
-        <li>
-          Q: What engine do you use?<br>
-          A: Roblox Studio + external tools (Blender, VSCode, Figma).
+        <li style="margin-top:12px;">
+          Q: What software do you use?<br>
+          A: Roblox Studio, Blender, VSCode, Figma, Substance Painter, Git.
+        </li>
+
+        <li style="margin-top:12px;">
+          Q: Do you use AI in your workflow?<br>
+          A: Yes — for documentation, testing, and autocomplete (NOT for asset creation).
         </li>
       </ul>
+
     </div>
   </div>
 
-  <!-- AI Assistant Section -->
-  <div class="card ai-card animate-popIn">
-    <h2 class="section-title">🤖 Ask the AI Assistant</h2>
-    <p class="ai-desc">Type your question below — the AI assistant feature is being prepared.</p>
+  <!-- AI ASSISTANT BAR -->
+  <div class="card" style="padding:26px; margin-top:35px;">
+    <h2>🤖 Ask the AI Assistant</h2>
+    <p style="opacity:0.7; margin-bottom:15px;">
+      (Coming soon — will answer questions based on the documentation.)
+    </p>
 
-    <input
-      type="text"
-      id="ai-input"
-      class="search-input"
-      placeholder="Ask a question… (feature not active yet)"
-    >
+    <div style="
+      display:flex;
+      align-items:center;
+      background:linear-gradient(135deg, #1e1f22, #161719);
+      border:1px solid #2c2d30;
+      border-radius:14px;
+      padding:16px 18px;
+      transition:0.25s;
+    " onmouseover="this.style.borderColor='#4b72ff'" onmouseout="this.style.borderColor='#2c2d30'">
 
-    <div class="ai-preview">
-      <p>💬 AI responses will appear here once enabled.</p>
+      <svg width="20" height="20" fill="#7a7f86" style="margin-right:10px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM4 8l4 4 4-4-4-4-4 4z"/>
+      </svg>
+
+      <input 
+        id="ai-question"
+        type="text"
+        placeholder="Ask a question… (AI module will answer)"
+        style="
+          flex:1;
+          background:transparent;
+          border:none;
+          outline:none;
+          color:white;
+          font-size:16px;
+        "
+      >
     </div>
   </div>
+
 </div>
 
 <script>
-// Simple search filter
+// Simple search filter for docs
 const search = document.getElementById("search-docs");
 const docs = document.getElementById("docs-content");
 
@@ -104,25 +150,3 @@ search.addEventListener("input", () => {
   });
 });
 </script>
-</body>
-</html>
-
-<style>
-  .modern-search {
-    width: 100%;
-    padding: 16px;
-    border-radius: 14px;
-    border: 1px solid #2c2d30;
-    background: linear-gradient(135deg, #1f2124, #161719);
-    color: white;
-    font-size: 16px;
-    transition: 0.25s ease;
-    box-shadow: 0 0 0 0 rgba(0, 140, 255, 0.4);
-  }
-  .modern-search:focus {
-    border-color: #0a84ff;
-    box-shadow: 0 0 12px 2px rgba(10, 132, 255, 0.5);
-    outline: none;
-    background: #1c1e21;
-  }
-</style>
