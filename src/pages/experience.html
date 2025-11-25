@@ -1,0 +1,49 @@
+<div>
+  <h1 class="page-title">Studio Creations</h1>
+
+  <div id="games-container" class="grid gap-6 grid-cols-1 md:grid-cols-3"></div>
+</div>
+
+<script>
+const GAMES = [
+  { id: 85250100428738, name: "R26" },
+  { id: 96190771257101, name: "PixelDrop" },
+  { id: 135869717619701, name: "Beta" }
+];
+
+async function fetchData(id) {
+  const universe = await fetch(`https://games.roblox.com/v1/games?universeIds=${id}`).then(r => r.json());
+  const icon = await fetch(`https://thumbnails.roblox.com/v1/games/icons?universeIds=${id}&size=420x420&format=Png&isCircular=false`).then(r => r.json());
+
+  return {
+    visits: universe.data[0].visits,
+    playing: universe.data[0].playing,
+    thumbnail: icon.data[0].imageUrl
+  };
+}
+
+async function loadGames() {
+  const area = document.getElementById("games-container");
+
+  for (const g of GAMES) {
+    const info = await fetchData(g.id);
+
+    area.innerHTML += `
+      <div class="game-card">
+        <div class="game-thumb-container">
+          <img src="${info.thumbnail}" class="game-thumb"/>
+        </div>
+
+        <h3 class="game-title">${g.name}</h3>
+
+        <div class="game-stats">
+          <p>Visits <span>${info.visits.toLocaleString()}</span></p>
+          <p>Playing <span>${info.playing.toLocaleString()}</span></p>
+        </div>
+      </div>
+    `;
+  }
+}
+
+loadGames();
+</script>

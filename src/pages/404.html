@@ -1,0 +1,53 @@
+<div class="text-center mt-20 max-w-xl mx-auto animate-fadeIn">
+  <div class="flex justify-center mb-6">
+    <div class="w-20 h-20 bg-red-600/20 rounded-2xl flex items-center justify-center animate-pulse">
+      <span class="text-4xl">⚠️</span>
+    </div>
+  </div>
+
+  <h1 class="text-6xl font-extrabold mb-4">404 page not found😡</h1>
+
+  <p class="text-lg mb-3">
+    Oops! The page you tried to access couldn’t be found.
+  </p>
+
+  <p class="opacity-80 mb-4">
+    This usually happens when:
+  </p>
+
+  <ul class="opacity-70 text-left inline-block leading-7">
+    <li>• The module/page was moved or renamed</li>
+    <li>• The url is outdated or incorrect</li>
+    <li>• You typed the address manually with a typo</li>
+    <li>• U became an idiot & tried to bypass site url</li>
+    <li>• If u believe there was a bug, pls report to our admins / developers</li>
+    <li>• The dashboard only loads modules internally (no direct .html links)</li>
+  </ul>
+
+  <p class="mt-6 opacity-70">
+    Redirecting you back to the dashboard…
+  </p>
+
+  <button
+    onclick="location.href='https://bloxglobe.github.io/BloxGlobe-website/#home'"
+    class="mt-6 px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium"
+  >
+    Return Now
+  </button>
+</div>
+
+<script>
+setTimeout(() => {
+  location.href = "https://bloxglobe.github.io/BloxGlobe-website/#home";
+}, 3000);
+</script>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+</style>
