@@ -1,0 +1,28 @@
+.ai-bar {
+display: flex;
+gap: 1rem;
+background: #1a1d27;
+padding: 1rem;
+border-radius: 14px;
+margin: 1.5rem auto;
+max-width: 800px;
+align-items: center;
+}
+.ai-input {
+flex: 1;
+background: #0f111a;
+padding: 0.8rem 1rem;
+border-radius: 10px;
+border: none;
+outline: none;
+font-size: 1rem;
+color: var(--fg);
+}
+.ai-send {
+background: var(--accent);
+padding: 0.8rem 1.2rem;
+border-radius: 10px;
+border: none;
+cursor: pointer;
+font-weight: 600;
+}
