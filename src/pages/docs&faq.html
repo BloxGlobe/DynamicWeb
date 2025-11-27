@@ -1,46 +1,30 @@
 <div class="page">
   <h1 class="page-title">Docs & FAQ</h1>
 
-  <!-- Modern Search Bar (Top) -->
-  <div class="card" style="padding:22px; margin-bottom:30px;">
-    <div style="
-      display:flex;
-      align-items:center;
-      background:linear-gradient(135deg, #1e1f22, #17181a);
-      border:1px solid #2c2d30;
-      border-radius:14px;
-      padding:14px 18px;
-      transition:0.25s;
-    " onmouseover="this.style.borderColor='#4b72ff'" onmouseout="this.style.borderColor='#2c2d30'">
-      <svg width="20" height="20" fill="#7a7f86" style="margin-right:10px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 
-          1.415-1.414l-3.85-3.85zm-5.242.656a5 
-          5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+  <!-- SEARCH BAR -->
+  <div class="card search-card">
+    <div class="search-wrapper">
+      <svg width="20" height="20" fill="#7a7f86" class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 
+        1.415-1.414l-3.85-3.85zm-5.242.656a5 
+        5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
       </svg>
 
       <input 
         id="search-docs"
+        class="search-input"
         type="text"
         placeholder="Search the documentation…"
-        style="
-          flex:1;
-          background:transparent;
-          border:none;
-          outline:none;
-          color:white;
-          font-size:16px;
-        "
       >
     </div>
   </div>
 
-  <!-- EXTENDED DOCUMENTATION -->
-  <div class="card" style="padding:28px;">
+  <!-- DOCUMENTATION -->
+  <div class="card docs-card">
     <h2>📘 Development Wiki</h2>
 
-    <div id="docs-content" style="margin-top:20px; line-height:1.8;">
+    <div id="docs-content" class="docs-content">
 
-      <!-- SECTION 1 -->
       <h3>• How We Make Our Games</h3>
       <p>We follow a complete AAA-style Roblox development pipeline:</p>
       <ul>
@@ -51,8 +35,7 @@
         <li>• Automatic QA testing using unit & integration scripts</li>
       </ul>
 
-      <!-- SECTION 2 -->
-      <h3 style="margin-top:28px;">• UGC Creation Pipeline</h3>
+      <h3>• UGC Creation Pipeline</h3>
       <p>Our UGC workflow involves:</p>
       <ul>
         <li>• Blender sculpting & retopology workflow</li>
@@ -61,8 +44,7 @@
         <li>• Collision & deformation checks</li>
       </ul>
 
-      <!-- SECTION 3 -->
-      <h3 style="margin-top:28px;">• Internal Tooling & Automation</h3>
+      <h3>• Internal Tooling & Automation</h3>
       <ul>
         <li>• Asset pipeline CLI</li>
         <li>• Plugin pack: animator, material linker, lightmapper</li>
@@ -70,83 +52,55 @@
         <li>• Custom DataStore benchmarking tools</li>
       </ul>
 
-      <!-- SECTION 4 -->
-      <h3 style="margin-top:28px;">• FAQ</h3>
+      <h3>• FAQ</h3>
       <ul>
         <li>Q: How long does a full game take?<br>
             A: 1–6 months based on scope.</li>
 
-        <li style="margin-top:12px;">
+        <li>
           Q: Do you take commissions?<br>
           A: Yes — see Support → Hire page.
         </li>
 
-        <li style="margin-top:12px;">
+        <li>
           Q: What software do you use?<br>
           A: Roblox Studio, Blender, VSCode, Figma, Substance Painter, Git.
         </li>
 
-        <li style="margin-top:12px;">
+        <li>
           Q: Do you use AI in your workflow?<br>
-          A: Yes — for documentation, testing, and autocomplete (NOT for asset creation).
+          A: Yes — for documentation, testing, and autocomplete (NOT asset creation).
         </li>
       </ul>
 
     </div>
   </div>
 
-  <!-- AI ASSISTANT BAR -->
+  <!-- AI ASSISTANT SECTION -->
   <div class="card" style="padding:26px; margin-top:35px;">
     <h2>🤖 Ask the AI Assistant</h2>
     <p style="opacity:0.7; margin-bottom:15px;">
-      (Coming soon — will answer questions based on the documentation.)
+      (Powered by local AI rules — not external APIs.)
     </p>
 
-    <div style="
-      display:flex;
-      align-items:center;
-      background:linear-gradient(135deg, #1e1f22, #161719);
-      border:1px solid #2c2d30;
-      border-radius:14px;
-      padding:16px 18px;
-      transition:0.25s;
-    " onmouseover="this.style.borderColor='#4b72ff'" onmouseout="this.style.borderColor='#2c2d30'">
-
-      <svg width="20" height="20" fill="#7a7f86" style="margin-right:10px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <div class="search-wrapper" style="padding:16px 18px;">
+      <svg width="20" height="20" fill="#7a7f86" class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
         <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM4 8l4 4 4-4-4-4-4 4z"/>
       </svg>
 
       <input 
         id="ai-question"
+        class="search-input"
         type="text"
-        placeholder="Ask a question… (AI module will answer)"
-        style="
-          flex:1;
-          background:transparent;
-          border:none;
-          outline:none;
-          color:white;
-          font-size:16px;
-        "
+        placeholder="Ask a question…"
       >
     </div>
+
+    <div id="ai-response" style="margin-top:18px; opacity:0.8;"></div>
   </div>
 
 </div>
 
-<script>
-// Simple search filter for docs
-const search = document.getElementById("search-docs");
-const docs = document.getElementById("docs-content");
-
-search.addEventListener("input", () => {
-  const q = search.value.toLowerCase();
-  const blocks = docs.querySelectorAll("h3, p, li");
-
-  blocks.forEach(el => {
-    el.style.display = el.textContent.toLowerCase().includes(q)
-      ? "block"
-      : "none";
-  });
-});
-</script>
+<!-- JS LINKS -->
+<script src="scripts/searchDocs.js"></script>
+<script src="scripts/aiAssistant.js"></script>

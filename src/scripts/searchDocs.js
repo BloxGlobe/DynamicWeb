@@ -1,7 +1,13 @@
-export function searchDocs(query, docs) {
-query = query.toLowerCase();
-return docs.filter(doc =>
-doc.title.toLowerCase().includes(query) ||
-doc.content.toLowerCase().includes(query)
-);
-}
+// scripts/searchDocs.js
+
+const searchInput = document.getElementById("search-docs");
+const docsContent = document.getElementById("docs-content");
+
+searchInput.addEventListener("input", () => {
+  const q = searchInput.value.toLowerCase();
+  const elements = docsContent.querySelectorAll("h3, p, li");
+
+  elements.forEach(el => {
+    el.style.display = el.textContent.toLowerCase().includes(q) ? "block" : "none";
+  });
+});
