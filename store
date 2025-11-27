@@ -5,74 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BloxGlobe Dashboard</title>
 
+  <!-- Updated path -->
   <link rel="stylesheet" href="style.css" />
+
   <script src="src/router.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
 
-    <!-- SIDEBAR -->
+    <!-- Sidebar -->
     <aside class="sidebar">
 
-      <!-- Logo -->
+      <!-- Logo + Header -->
       <div class="sidebar-header">
         <img src="src/assets/images/BloxGlobe.png" class="rbx-logo" />
         <span class="title">Dashboard</span>
       </div>
 
-      <!-- MAIN -->
+      <!-- Section: Main -->
       <div class="sidebar-section">
         <p class="section-label">MAIN</p>
-        <button class="nav-btn" data-page="home">
-          <span>Home</span>
-        </button>
-
-        <button class="nav-btn" data-page="experience">
-          <span>Creations</span>
-        </button>
-
-        <button class="nav-btn" data-page="store">
-          <span>Store</span>
-        </button>
+        <button class="nav-btn" data-page="home">Home</button>
+        <button class="nav-btn" data-page="experience">Creations</button>
+        <button class="nav-btn" data-page="store">Store</button>
       </div>
 
-      <!-- COMMUNITY -->
+      <!-- Section: Community -->
       <div class="sidebar-section">
         <p class="section-label">COMMUNITY</p>
-        <button class="nav-btn" data-page="Forum"><span>Forum</span></button>
-        <button class="nav-btn" data-page="update"><span>Updates</span></button>
+        <button class="nav-btn" data-page="Forum">Forum</button>
+        <button class="nav-btn" data-page="update">Updates</button>
       </div>
 
-      <!-- TOOLS -->
+      <!-- Section: Tools -->
       <div class="sidebar-section">
         <p class="section-label">TOOLS</p>
-        <button class="nav-btn" data-page="setting"><span>Settings</span></button>
-        <button class="nav-btn" data-page="sidebar.ts"><span>All Tools</span></button>
+        <button class="nav-btn" data-page="setting">Settings</button>
+        <button class="nav-btn" data-page="sidebar.ts">All Tools</button>
       </div>
 
-      <!-- HELP -->
+      <!-- Section: Help -->
       <div class="sidebar-section bottom-section">
         <p class="section-label">HELP CENTER</p>
-        <button class="nav-btn" data-page="docs&faq"><span>Docs & FAQ</span></button>
-        <button class="nav-btn" data-page="support"><span>Support</span></button>
+        <button class="nav-btn" data-page="docs&faq">Docs & FAQ</button>
+        <button class="nav-btn" data-page="support">Support</button>
       </div>
 
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- Main Content -->
     <main class="main">
 
-      <!-- MODERN SEARCH BAR -->
-      <div class="top-search">
-        <input type="text" placeholder="Search dashboard…" class="search-input" />
-      </div>
-
+      <!-- Dynamic content -->
       <div id="page-content" class="content">
         Importing data, assets etc…
       </div>
 
-      <!-- FOOTER MOVED TO BOTTOM -->
+      <!-- Sticky footer inside dashboard -->
       <footer class="footer">
         © <span id="year"></span> BloxGlobe — All rights reserved.
       </footer>
@@ -82,6 +72,7 @@
   </div>
 
   <script>
+    // Auto-update year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
