@@ -1,59 +1,33 @@
-// scripts/aiAssistant.js
+const aiInput = document.getElementById("aiInput");
+const aiSend = document.getElementById("aiSend");
+const aiPanel = document.getElementById("aiPanel");
+const aiMessages = document.getElementById("aiMessages");
+const aiClose = document.getElementById("aiClose");
 
-console.log("AI Assistant Loaded");
-
-const aiInput = document.getElementById("ai-question");
-const aiOutput = document.getElementById("ai-response");
-
-const badWords = [
-  "fuck", "shit", "bitch", "asshole", "cunt",
-  "nigga", "nigger", "slut", "whore", "kill", "suicide"
-];
-
-aiInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    runAI(aiInput.value.trim());
-  }
+// Open chat when typing
+aiInput.addEventListener("focus", () => {
+  aiPanel.style.display = "flex";
 });
 
-function runAI(question) {
-  if (!question) return;
+// Close panel
+aiClose.addEventListener("click", () => {
+  aiPanel.style.display = "none";
+});
 
-  const lowered = question.toLowerCase();
+aiSend.addEventListener("click", () => {
+  const text = aiInput.value.trim();
+  if (!text) return;
 
-  // Bad word detection
-  if (badWords.some(w => lowered.includes(w))) {
-    aiOutput.textContent = "I am currently unable to assist you with that.";
-    aiInput.value = "";
-    return;
-  }
+  aiMessages.innerHTML += `
+    <div class="ai-message"><b>You:</b> ${text}</div>
+  `;
 
-  // Simple AI auto reply
-  const response = generateAIResponse(question);
-
-  aiOutput.textContent = response;
   aiInput.value = "";
-}
 
-function generateAIResponse(q) {
-  // Lightweight AI-style responses
-  if (q.includes("ugc")) {
-    return "UGC items are created using Blender + textured in Substance Painter. Need specifics?";
-  }
-
-  if (q.includes("game") || q.includes("development")) {
-    return "Game development involves modular scripting, UI, optimization, and testing. I can explain any part.";
-  }
-
-  if (q.includes("optimize")) {
-    return "To optimize: reduce textures, use LOD, limit loops, and use CollectionService.";
-  }
-
-  if (q.includes("plugin")) {
-    return "Plugins automate tasks like animation, materials, or map cleanup. I can explain how.";
-  }
-
-  // Default response
-  return "Here’s what I can tell you: " + 
-         "This topic is interesting! I can help explain it if you share more details.";
-}
+  setTimeout(() => {
+    aiMessages.innerHTML += `
+      <div class="ai-message"><b>AI:</b> Processing your request…</div>
+    `;
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+  }, 500);
+});

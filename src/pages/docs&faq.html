@@ -77,30 +77,27 @@
   </div>
 
   <!-- AI ASSISTANT SECTION -->
-  <div class="card" style="padding:26px; margin-top:35px;">
-    <h2>🤖 Ask the AI Assistant</h2>
-    <p style="opacity:0.7; margin-bottom:15px;">
-      (Powered by local AI rules — not external APIs.)
-    </p>
 
-    <div class="search-wrapper" style="padding:16px 18px;">
-      <svg width="20" height="20" fill="#7a7f86" class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-        <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM4 8l4 4 4-4-4-4-4 4z"/>
-      </svg>
+<!-- AI Chat Panel -->
+<div class="ai-chatbox" id="aiPanel">
+  <div class="ai-chat-header">BloxGlobe Assistant</div>
+  <div id="aiClose" class="ai-close">✕</div>
 
-      <input 
-        id="ai-question"
-        class="search-input"
-        type="text"
-        placeholder="Ask a question…"
-      >
-    </div>
-
-    <div id="ai-response" style="margin-top:18px; opacity:0.8;"></div>
-  </div>
-
+  <div class="ai-chat-messages" id="aiMessages"></div>
 </div>
+
+<!-- AI Search / Question Bar -->
+<div class="ai-wrapper">
+  <input id="aiInput" type="text" placeholder="Ask anything…">
+  <button id="aiSend">Send</button>
+</div>
+
+<!-- AI Response Output (optional) -->
+<div id="ai-response" style="margin-top:18px; opacity:0.8;"></div>
 
 <!-- JS LINKS -->
 <script src="src/scripts/searchDocs.js"></script>
 <script src="src/scripts/aiAssistant.js"></script>
+
+<!-- CSS LINK (you had this wrong!) -->
+<link rel="stylesheet" href="src/assets/styles/ai-bar.css">
